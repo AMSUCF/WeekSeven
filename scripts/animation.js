@@ -1,5 +1,7 @@
+'use strict';
+
 //jQuery: runs when the document is ready
-$(document).ready(function() {
+$(document).ready(function () {
   //gives us our sidenav with click to close, check Materialize documentation for more options
   $('#sidenav-toggle').sideNav({
     closeOnClick: true
@@ -14,7 +16,7 @@ $(document).ready(function() {
     paddingBottom: 0,
     responsiveWidth: 640,
     css3: true,
-    onLeave: function(index, nextIndex, direction){
+    onLeave: function onLeave(index, nextIndex, direction) {
       if (index == 2) {
         $('#firstCard').addClass('animated bounceInRight');
       }
@@ -24,13 +26,13 @@ $(document).ready(function() {
       if (index == 4) {
         $('#firstCard').addClass('animated bounceInLeft');
       }
-}
+    }
 
   });
-  $(document).on('click', '#sidenav', '.drag-target', function(e) {
-//in responsive mode?
-      if($('.fp-responsive').length){
-          $('body').css('overflow', 'visible');
-        }
-      });
+  $(document).on('click', '#sidenav', '.drag-target', function (e) {
+    //in responsive mode?
+    if ($('.fp-responsive').length) {
+      $('body').css('overflow', 'visible');
+    }
+  });
 });
